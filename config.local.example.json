@@ -1,0 +1,19 @@
+{
+  "$comment": [
+    "Copy to config.local.json and edit if you want anything other than the",
+    "fully-local default. Everything here is optional."
+  ],
+  "assets": {
+    "profile": "cdn-first",
+    "cdn": {
+      "baseUrl": "https://cdn.example.com/pokemon/"
+    }
+  },
+  "publish": {
+    "enabled": true,
+    "host": "user@cdn.example.com",
+    "remoteDir": "/srv/cdn",
+    "namespace": "pokemon",
+    "baseUrl": "https://cdn.example.com/pokemon/"
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Box layouts &middot; Pok&eacute;mon Crystal</title>
+<link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-root="../" data-game="crystal">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="crumb" href="../game/crystal.html">&larr; Pok&eacute;mon Crystal</a>
+    <div>
+      <h1 id="game-name">Pok&eacute;mon Crystal</h1>
+      <div class="sub" id="game-sub"></div>
+    </div>
+    <div class="spacer"></div>
+    <a class="crumb" href="../index.html">All games</a>
+  </div>
+
+  <div class="stats">
+    <div class="pct" id="pct">0%</div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="stat"><div class="k">Caught</div><div class="v" id="stat-caught">0 / 0</div></div>
+    <div class="stat"><div class="k">Remaining</div><div class="v" id="stat-remaining">0</div></div>
+    <div class="stat"><div class="k">Needs a trade</div><div class="v" id="stat-blocked">0</div></div>
+    <div class="stat"><div class="k">Needs a partner</div><div class="v" id="stat-link">0</div></div>
+  </div>
+
+  <div class="legend">
+    <span><i class="c-plain"></i> Catchable here</span>
+    <span><i class="c-blocked"></i> Trade from the paired version</span>
+    <span><i class="c-tradeevo"></i> Evolves by trading</span>
+    <span><i class="c-never"></i> Event only</span>
+    <span><i class="c-dispute"></i> Sources disagree</span>
+    <span><i class="c-caught"></i> Caught</span>
+  </div>
+
+  <div class="controls">
+    <label class="switch">
+      <input type="checkbox" id="tapmode" role="switch">
+      <span class="track"><span class="knob"></span></span>
+      <span class="switch-label">Tap to catch</span>
+    </label>
+    <p class="hint" id="tapmode-hint"></p>
+  </div>
+
+    <div class="savebar">
+      <span class="savestate" id="savestate"></span>
+      <button class="btn tiny" id="export-csv" type="button">Export CSV</button>
+      <button class="btn tiny" id="import-btn" type="button">Import CSV</button>
+      <input type="file" id="import-csv" accept=".csv,text/csv" hidden>
+    </div>
+
+
+  <!-- Plain container. The script appends one .boxgrid per regional dex;
+       making this a grid too nested them and threw off the layout. -->
+  <div id="boxes"></div>
+
+</div>
+<script src="../js/assets.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/collection.js"></script>
+<script src="../js/boxes.js"></script>
+</body>
+</html>

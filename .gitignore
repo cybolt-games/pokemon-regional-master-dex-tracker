@@ -1,0 +1,28 @@
+# Raw HTTP scrape cache — large, fully reproducible via scrapers/
+raw/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local deployment overrides — hostnames, publish targets, anything specific to
+# one machine. Copy config.local.example.json to start one.
+config.local.json
+
+# Your collection — real progress, not project data.
+collection.csv
+collection-backups/
+
+# Sprites and cover art are NOT redistributed here — they are Nintendo's
+# artwork, not this project's to ship. `python3 setup.py` downloads them from
+# their original sources into these directories.
+site/assets/sprites/
+site/assets/boxart/

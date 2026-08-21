@@ -1,0 +1,83 @@
+{
+  "$comment": [
+    "Single source of truth for how this deployment behaves.",
+    "Defaults are fully local and self-contained: no external hosts are contacted",
+    "at runtime, which is what most people cloning this repo will want.",
+    "Switch assets.profile to turn on the other behaviours. Everything under",
+    "'publish' is optional and only used by scrapers/push_cdn.py."
+  ],
+  "site": {
+    "title": "Regional Dex Buddy",
+    "tagline": "Every PC box, laid out exactly as the game shows it."
+  },
+  "assets": {
+    "$comment": "Which resolution profile the front end uses. See profiles below.",
+    "profile": "local",
+    "profiles": {
+      "local": {
+        "description": "Serve everything from this repo. No external requests, works fully offline. Default.",
+        "tiers": [
+          "local"
+        ]
+      },
+      "local-then-public": {
+        "description": "Prefer the local copy, fall back to a public mirror if a file is missing.",
+        "tiers": [
+          "local",
+          "public"
+        ]
+      },
+      "cdn-first": {
+        "description": "Try a self-hosted CDN first, then the local copy, then a public mirror. Needs assets.cdn.baseUrl.",
+        "tiers": [
+          "cdn",
+          "local",
+          "public"
+        ]
+      },
+      "public-only": {
+        "description": "Hotlink public mirrors and vendor nothing. Smallest checkout, needs internet.",
+        "tiers": [
+          "public"
+        ]
+      }
+    },
+    "cdn": {
+      "$comment": "Only consulted by profiles whose tiers include 'cdn'.",
+      "baseUrl": "",
+      "probePath": "sprites/hgss/152.png",
+      "probeTimeoutMs": 1200,
+      "$probeComment": "A private-CA or LAN-only CDN fails slowly from outside the network. One probe up front decides whether to use it at all, instead of letting every image discover the problem itself. Cached per browser session.",
+      "$hint": "Set this in config.local.json, or here if you're not publishing the repo."
+    },
+    "public": {
+      "$comment": "Templates for the public fallback tier. {id} is the national dex id, {game} the game slug, {set} the sprite set.",
+      "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/{set}/{id}.png",
+      "boxart": "https://img.pokemondb.net/boxes/{game}.jpg"
+    },
+    "localBase": "assets/"
+  },
+  "publish": {
+    "$comment": "Used only by scrapers/push_cdn.py. Irrelevant to a local-only deployment.",
+    "enabled": false,
+    "host": "",
+    "remoteDir": "",
+    "namespace": "pokemon",
+    "baseUrl": "",
+    "$hint": "Set these in config.local.json. push_cdn.py refuses to run until publish.enabled is true."
+  },
+  "scraping": {
+    "$comment": "Politeness settings honoured by scrapers/lib/http_cache.py.",
+    "userAgent": "RegionalDexBuddy/1.0 (personal offline Pokedex box-layout reference)",
+    "crawlDelaySeconds": {
+      "pokemondb.net": 2.0,
+      "img.pokemondb.net": 2.0,
+      "www.serebii.net": 2.0,
+      "bulbapedia.bulbagarden.net": 5.0,
+      "pokeapi.co": 0.15,
+      "raw.githubusercontent.com": 0.05,
+      "api.github.com": 0.5
+    },
+    "defaultCrawlDelaySeconds": 2.0
+  }
+}

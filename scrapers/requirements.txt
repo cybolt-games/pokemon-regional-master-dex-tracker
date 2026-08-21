@@ -1,0 +1,2 @@
+# Scraper-only dependencies. The site itself has none.
+beautifulsoup4>=4.12

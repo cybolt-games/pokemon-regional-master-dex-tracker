@@ -1,0 +1,10 @@
+.git
+.gitignore
+raw/
+scrapers/
+collection-backups/
+config.local.json
+__pycache__/
+*.pyc
+*.md
+LICENSE

@@ -1,0 +1,12 @@
+services:
+  regional-dex-buddy:
+    build: .
+    image: regional-dex-buddy
+    container_name: regional-dex-buddy
+    ports:
+      - "8000:8000"
+    volumes:
+      # Your progress. Keeps the collection across container rebuilds.
+      - ./collection.csv:/app/collection.csv
+      - ./collection-backups:/app/collection-backups
+    restart: unless-stopped

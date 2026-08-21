@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pok&eacute;mon HOME &middot; Regional Dex Buddy</title>
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body data-root="">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="crumb" href="index.html">&larr; All games</a>
+    <div>
+      <h1>Pok&eacute;mon HOME</h1>
+      <div class="sub">Every region in order, boxed by its own dex number</div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="pct" id="pct">0%</div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="stat"><div class="k">In HOME</div><div class="v" id="stat-held">0 / 0</div></div>
+    <div class="stat"><div class="k">Remaining</div><div class="v" id="stat-remaining">0</div></div>
+    <div class="stat"><div class="k">Regions</div><div class="v" id="stat-regions">0</div></div>
+  </div>
+
+  <p class="hint">
+    Read-only. A Pok&eacute;mon counts as held if you&rsquo;ve marked it caught in
+    <strong>any</strong> game &mdash; mark them on the individual game pages and they
+    appear here.
+  </p>
+
+  <details class="settings">
+    <summary>Dex variants</summary>
+    <p class="lead">
+      Some regions have more than one regional dex, and they disagree on both size
+      and ordering. By default each region uses whichever variant you have the most
+      of, so the view follows what you&rsquo;ve actually been filling. Override any
+      of them here.
+    </p>
+    <div id="variant-settings"></div>
+  </details>
+
+  <div id="regions"></div>
+
+</div>
+<script src="js/assets.js"></script>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pok&eacute;mon Brilliant Diamond</title>
+<link rel="stylesheet" href="../css/app.css">
+</head>
+<body data-root="../" data-game="brilliant-diamond">
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="crumb" href="../index.html">&larr; All games</a>
+    <div>
+      <h1 id="game-name">Pok&eacute;mon Brilliant Diamond</h1>
+      <div class="sub" id="game-sub"></div>
+    </div>
+  </div>
+
+  <div class="linkrow">
+    <a class="linkcard primary" id="link-boxes" href="../boxes/brilliant-diamond.html">
+      <div class="title">Bank box layouts &rarr;</div>
+      <div class="desc">All 9 boxes as 6&times;5 grids, in regional dex order</div>
+    </a>
+    <a class="linkcard" id="link-walkthrough" target="_blank" rel="noopener" href="#">
+      <div class="title">Bulbapedia walkthrough &#8599;</div>
+      <div class="desc">Full 32-part guide, main story and post-game</div>
+    </a>
+  </div>
+
+  <div class="columns" id="exclusives">
+    <section class="panel">
+      <h2><span class="dot"></span><span id="head-attainable">Attainable</span>
+          <span class="count" id="count-attainable"></span></h2>
+      <div class="body">
+        <p class="lead" id="lead-attainable"></p>
+        <div class="monlist" id="list-attainable"></div>
+      </div>
+    </section>
+
+    <section class="panel blocked">
+      <h2><span class="dot"></span><span id="head-trade">Trade for</span>
+          <span class="count" id="count-trade"></span></h2>
+      <div class="body">
+        <p class="lead" id="lead-trade"></p>
+        <div class="monlist" id="list-trade"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="columns secondary">
+    <section class="panel tradeevo" id="panel-tradeevo" hidden>
+      <h2><span class="dot"></span>Evolves by trading
+          <span class="count" id="count-tradeevo"></span></h2>
+      <div class="body">
+        <p class="lead" id="lead-tradeevo"></p>
+        <div class="monlist" id="list-tradeevo"></div>
+      </div>
+    </section>
+
+    <section class="panel blocked" id="panel-event" hidden>
+      <h2><span class="dot"></span>Not obtainable in either version
+          <span class="count" id="count-event"></span></h2>
+      <div class="body">
+        <p class="lead">
+          Absent from HeartGold, SoulSilver and the Pok&eacute;walker courses alike.
+          Only ever distributed at events. Per Bulbapedia these are not required to
+          complete the Johto Pok&eacute;dex.
+        </p>
+        <div class="monlist" id="list-event"></div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-disputed" hidden>
+      <h2><span class="dot" style="background:var(--dispute)"></span>Sources disagree
+          <span class="count" id="count-disputed"></span></h2>
+      <div class="body">
+        <p class="lead">
+          Our sources don&rsquo;t agree on whether these are version exclusive.
+          Nothing has been guessed &mdash; open one to see what each source claims,
+          then trust what you see in-game.
+        </p>
+        <div class="monlist" id="list-disputed"></div>
+      </div>
+    </section>
+  </div>
+
+  <p class="hint" style="margin-top:26px">
+    This tracks the <strong>regional</strong> Johto dex only.
+    For the game-wide national-dex exclusives, see
+    <a id="link-national" target="_blank" rel="noopener" href="#">Serebii&rsquo;s list &#8599;</a>.
+  </p>
+
+</div>
+<script src="../js/assets.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/game.js"></script>
+</body>
+</html>

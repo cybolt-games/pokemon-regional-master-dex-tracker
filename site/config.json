@@ -1,0 +1,784 @@
+{
+ "profile": "local",
+ "tiers": [
+  "local"
+ ],
+ "cdn": {
+  "baseUrl": "",
+  "probePath": "sprites/hgss/152.png",
+  "probeTimeoutMs": 1200
+ },
+ "public": {
+  "sprites": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/{set}/{id}.png",
+  "boxart": "https://img.pokemondb.net/boxes/{game}.jpg"
+ },
+ "localBase": "assets/",
+ "spriteSets": {
+  "sprites/rb": "generation-i/red-blue",
+  "sprites/yellow": "generation-i/yellow",
+  "sprites/gold": "generation-ii/gold",
+  "sprites/silver": "generation-ii/silver",
+  "sprites/crystal": "generation-ii/crystal",
+  "sprites/rs": "generation-iii/ruby-sapphire",
+  "sprites/emerald": "generation-iii/emerald",
+  "sprites/frlg": "generation-iii/firered-leafgreen",
+  "sprites/dp": "generation-iv/diamond-pearl",
+  "sprites/platinum": "generation-iv/platinum",
+  "sprites/hgss": "generation-iv/heartgold-soulsilver",
+  "sprites/bw": "generation-v/black-white",
+  "sprites/xy": "generation-vi/x-y",
+  "sprites/oras": "generation-vi/omegaruby-alphasapphire",
+  "sprites/sm": "sun-moon",
+  "sprites/usum": "generation-vii/ultra-sun-ultra-moon",
+  "sprites/lgpe": "lets-go-pikachu-eevee",
+  "sprites/swsh": "sword-shield",
+  "sprites/bdsp": "generation-viii/brilliant-diamond-shining-pearl",
+  "sprites/pla": "legends-arceus",
+  "sprites/sv": "generation-ix/scarlet-violet"
+ },
+ "games": [
+  {
+   "id": "red",
+   "name": "Pokémon Red",
+   "shortName": "Red",
+   "generation": 1,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/red.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 12
+   }
+  },
+  {
+   "id": "blue",
+   "name": "Pokémon Blue",
+   "shortName": "Blue",
+   "generation": 1,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/blue.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 12
+   }
+  },
+  {
+   "id": "yellow",
+   "name": "Pokémon Yellow",
+   "shortName": "Yellow",
+   "generation": 1,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/yellow.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 12
+   }
+  },
+  {
+   "id": "gold",
+   "name": "Pokémon Gold",
+   "shortName": "Gold",
+   "generation": 2,
+   "region": "Johto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/gold.jpg",
+   "dexName": "New Pokédex",
+   "dexSize": 251,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 14
+   }
+  },
+  {
+   "id": "silver",
+   "name": "Pokémon Silver",
+   "shortName": "Silver",
+   "generation": 2,
+   "region": "Johto",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/silver.jpg",
+   "dexName": "New Pokédex",
+   "dexSize": 251,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 14
+   }
+  },
+  {
+   "id": "crystal",
+   "name": "Pokémon Crystal",
+   "shortName": "Crystal",
+   "generation": 2,
+   "region": "Johto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/crystal.jpg",
+   "dexName": "New Pokédex",
+   "dexSize": 251,
+   "boxes": {
+    "style": "list",
+    "cols": 1,
+    "rows": 20,
+    "perBox": 20,
+    "count": 14
+   }
+  },
+  {
+   "id": "ruby",
+   "name": "Pokémon Ruby",
+   "shortName": "Ruby",
+   "generation": 3,
+   "region": "Hoenn",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/ruby.jpg",
+   "dexName": "Hoenn Pokédex",
+   "dexSize": 202,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 14
+   }
+  },
+  {
+   "id": "sapphire",
+   "name": "Pokémon Sapphire",
+   "shortName": "Sapphire",
+   "generation": 3,
+   "region": "Hoenn",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/sapphire.jpg",
+   "dexName": "Hoenn Pokédex",
+   "dexSize": 202,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 14
+   }
+  },
+  {
+   "id": "emerald",
+   "name": "Pokémon Emerald",
+   "shortName": "Emerald",
+   "generation": 3,
+   "region": "Hoenn",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/emerald.jpg",
+   "dexName": "Hoenn Pokédex",
+   "dexSize": 202,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 14
+   }
+  },
+  {
+   "id": "firered",
+   "name": "Pokémon FireRed",
+   "shortName": "FireRed",
+   "generation": 3,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/firered.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 14
+   }
+  },
+  {
+   "id": "leafgreen",
+   "name": "Pokémon LeafGreen",
+   "shortName": "LeafGreen",
+   "generation": 3,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/leafgreen.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 14
+   }
+  },
+  {
+   "id": "diamond",
+   "name": "Pokémon Diamond",
+   "shortName": "Diamond",
+   "generation": 4,
+   "region": "Sinnoh",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/diamond.jpg",
+   "dexName": "Sinnoh Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 18
+   }
+  },
+  {
+   "id": "pearl",
+   "name": "Pokémon Pearl",
+   "shortName": "Pearl",
+   "generation": 4,
+   "region": "Sinnoh",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/pearl.jpg",
+   "dexName": "Sinnoh Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 18
+   }
+  },
+  {
+   "id": "platinum",
+   "name": "Pokémon Platinum",
+   "shortName": "Platinum",
+   "generation": 4,
+   "region": "Sinnoh",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/platinum.jpg",
+   "dexName": "Sinnoh Pokédex",
+   "dexSize": 210,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 18
+   }
+  },
+  {
+   "id": "heartgold",
+   "name": "Pokémon HeartGold",
+   "shortName": "HeartGold",
+   "generation": 4,
+   "region": "Johto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/heartgold.jpg",
+   "dexName": "Johto Pokédex",
+   "dexSize": 256,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 18
+   }
+  },
+  {
+   "id": "soulsilver",
+   "name": "Pokémon SoulSilver",
+   "shortName": "SoulSilver",
+   "generation": 4,
+   "region": "Johto",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/soulsilver.jpg",
+   "dexName": "Johto Pokédex",
+   "dexSize": 256,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 18
+   }
+  },
+  {
+   "id": "black",
+   "name": "Pokémon Black",
+   "shortName": "Black",
+   "generation": 5,
+   "region": "Unova",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/black.jpg",
+   "dexName": "Unova Pokédex",
+   "dexSize": 156,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 24,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "white",
+   "name": "Pokémon White",
+   "shortName": "White",
+   "generation": 5,
+   "region": "Unova",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/white.jpg",
+   "dexName": "Unova Pokédex",
+   "dexSize": 156,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 24,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "black-2",
+   "name": "Pokémon Black 2",
+   "shortName": "Black 2",
+   "generation": 5,
+   "region": "Unova",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/black-2.jpg",
+   "dexName": "Unova Pokédex",
+   "dexSize": 301,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 24,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "white-2",
+   "name": "Pokémon White 2",
+   "shortName": "White 2",
+   "generation": 5,
+   "region": "Unova",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/white-2.jpg",
+   "dexName": "Unova Pokédex",
+   "dexSize": 301,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 24,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "x",
+   "name": "Pokémon X",
+   "shortName": "X",
+   "generation": 6,
+   "region": "Kalos",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/x.jpg",
+   "dexName": "Central Kalos Pokédex",
+   "dexSize": 457,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 31,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "y",
+   "name": "Pokémon Y",
+   "shortName": "Y",
+   "generation": 6,
+   "region": "Kalos",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/y.jpg",
+   "dexName": "Central Kalos Pokédex",
+   "dexSize": 457,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 31,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "omega-ruby",
+   "name": "Pokémon Omega Ruby",
+   "shortName": "Omega Ruby",
+   "generation": 6,
+   "region": "Hoenn",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/omega-ruby.jpg",
+   "dexName": "Hoenn Pokédex",
+   "dexSize": 211,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 31,
+    "gridEvidence": "photograph"
+   }
+  },
+  {
+   "id": "alpha-sapphire",
+   "name": "Pokémon Alpha Sapphire",
+   "shortName": "Alpha Sapphire",
+   "generation": 6,
+   "region": "Hoenn",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/alpha-sapphire.jpg",
+   "dexName": "Hoenn Pokédex",
+   "dexSize": 211,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 31,
+    "gridEvidence": "photograph"
+   }
+  },
+  {
+   "id": "sun",
+   "name": "Pokémon Sun",
+   "shortName": "Sun",
+   "generation": 7,
+   "region": "Alola",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/sun.jpg",
+   "dexName": "Alola Pokédex",
+   "dexSize": 302,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "moon",
+   "name": "Pokémon Moon",
+   "shortName": "Moon",
+   "generation": 7,
+   "region": "Alola",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/moon.jpg",
+   "dexName": "Alola Pokédex",
+   "dexSize": 302,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "ultra-sun",
+   "name": "Pokémon Ultra Sun",
+   "shortName": "Ultra Sun",
+   "generation": 7,
+   "region": "Alola",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/ultra-sun.jpg",
+   "dexName": "Alola Pokédex",
+   "dexSize": 403,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "ultra-moon",
+   "name": "Pokémon Ultra Moon",
+   "shortName": "Ultra Moon",
+   "generation": 7,
+   "region": "Alola",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/ultra-moon.jpg",
+   "dexName": "Alola Pokédex",
+   "dexSize": 403,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "lets-go-pikachu",
+   "name": "Pokémon: Let's Go, Pikachu!",
+   "shortName": "Let's Go Pikachu",
+   "generation": 7,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/lets-go-pikachu.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 153,
+   "boxes": {
+    "style": "single",
+    "cols": 6,
+    "rows": 0,
+    "perBox": 1000,
+    "count": 1
+   }
+  },
+  {
+   "id": "lets-go-eevee",
+   "name": "Pokémon: Let's Go, Eevee!",
+   "shortName": "Let's Go Eevee",
+   "generation": 7,
+   "region": "Kanto",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/lets-go-eevee.jpg",
+   "dexName": "Kanto Pokédex",
+   "dexSize": 153,
+   "boxes": {
+    "style": "single",
+    "cols": 6,
+    "rows": 0,
+    "perBox": 1000,
+    "count": 1
+   }
+  },
+  {
+   "id": "sword",
+   "name": "Pokémon Sword",
+   "shortName": "Sword",
+   "generation": 8,
+   "region": "Galar",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/sword.jpg",
+   "dexName": "Galar Pokédex",
+   "dexSize": 821,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "shield",
+   "name": "Pokémon Shield",
+   "shortName": "Shield",
+   "generation": 8,
+   "region": "Galar",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/shield.jpg",
+   "dexName": "Galar Pokédex",
+   "dexSize": 821,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "brilliant-diamond",
+   "name": "Pokémon Brilliant Diamond",
+   "shortName": "Brilliant Diamond",
+   "generation": 8,
+   "region": "Sinnoh",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/brilliant-diamond.jpg",
+   "dexName": "Sinnoh Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 40,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "shining-pearl",
+   "name": "Pokémon Shining Pearl",
+   "shortName": "Shining Pearl",
+   "generation": 8,
+   "region": "Sinnoh",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/shining-pearl.jpg",
+   "dexName": "Sinnoh Pokédex",
+   "dexSize": 151,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 40,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "legends-arceus",
+   "name": "Pokémon Legends: Arceus",
+   "shortName": "Legends: Arceus",
+   "generation": 8,
+   "region": "Hisui",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/legends-arceus.jpg",
+   "dexName": "Hisui Pokédex",
+   "dexSize": 242,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "boxNoun": "Pasture",
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "scarlet",
+   "name": "Pokémon Scarlet",
+   "shortName": "Scarlet",
+   "generation": 9,
+   "region": "Paldea",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/scarlet.jpg",
+   "dexName": "Paldea Pokédex",
+   "dexSize": 843,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "violet",
+   "name": "Pokémon Violet",
+   "shortName": "Violet",
+   "generation": 9,
+   "region": "Paldea",
+   "status": "live",
+   "accent": "ss",
+   "boxart": "boxart/violet.jpg",
+   "dexName": "Paldea Pokédex",
+   "dexSize": 843,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  },
+  {
+   "id": "legends-za",
+   "name": "Pokémon Legends: Z-A",
+   "shortName": "Legends: Z-A",
+   "generation": 9,
+   "region": "Kalos",
+   "status": "live",
+   "accent": "hg",
+   "boxart": "boxart/legends-za.jpg",
+   "dexName": "Lumiose Pokédex",
+   "dexSize": 364,
+   "boxes": {
+    "style": "grid",
+    "cols": 6,
+    "rows": 5,
+    "perBox": 30,
+    "count": 32,
+    "gridEvidence": "screenshot"
+   }
+  }
+ ]
+}

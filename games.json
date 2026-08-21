@@ -1,0 +1,1878 @@
+{
+  "$schema": {
+    "$comment": [
+      "The registry that drives everything. Adding a game means adding an entry here",
+      "and running the pipeline — no code changes.",
+      "",
+      "Every field must come from a scraped or primary source, never from recall.",
+      "'status' is one of: live (built and shipping), planned (declared, not built yet).",
+      "",
+      "boxes.style:",
+      "  grid   - a columns x rows PC box grid, the normal case from Gen 3 on",
+      "  list   - Gen 1/2, where the storage UI is a scrolling name list, not a grid",
+      "  single - one very large box (Let's Go), no grid",
+      "  pasture- Legends Arceus pastures; same capacity, different presentation",
+      "",
+      "A game may have several regional dexes (Kalos is split in three, Galar and",
+      "Paldea each add DLC dexes), so 'dexes' is always an array."
+    ]
+  },
+  "games": [
+    {
+      "id": "red",
+      "name": "Pokémon Red",
+      "shortName": "Red",
+      "status": "live",
+      "generation": 1,
+      "region": "Kanto",
+      "versionGroup": "red-blue",
+      "pokeapiVersion": "red",
+      "pairedWith": "blue",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "kanto",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "red-blue-yellow"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 12,
+        "source": "pret disassembly: pret/pokered constants/pokemon_data_constants.asm — MONS_PER_BOX 20, NUM_BOXES 12. UI is a scrolling name list, not a grid (https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System)."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-i/red-blue",
+        "dir": "sprites/rb"
+      },
+      "boxart": "boxart/red.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Red_and_Blue",
+        "nationalExclusives": "https://www.serebii.net/rb/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "red-blue/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/rb/exclusives.shtml"
+      }
+    },
+    {
+      "id": "blue",
+      "name": "Pokémon Blue",
+      "shortName": "Blue",
+      "status": "live",
+      "generation": 1,
+      "region": "Kanto",
+      "versionGroup": "red-blue",
+      "pokeapiVersion": "blue",
+      "pairedWith": "red",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "kanto",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "red-blue-yellow"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 12,
+        "source": "pret disassembly: pret/pokered — MONS_PER_BOX 20, NUM_BOXES 12."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-i/red-blue",
+        "dir": "sprites/rb"
+      },
+      "boxart": "boxart/blue.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Red_and_Blue",
+        "nationalExclusives": "https://www.serebii.net/rb/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "red-blue/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/rb/exclusives.shtml"
+      }
+    },
+    {
+      "id": "yellow",
+      "name": "Pokémon Yellow",
+      "shortName": "Yellow",
+      "status": "live",
+      "generation": 1,
+      "region": "Kanto",
+      "versionGroup": "yellow",
+      "pokeapiVersion": "yellow",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "kanto",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "red-blue-yellow"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 12,
+        "source": "pret disassembly: pret/pokeyellow — MONS_PER_BOX 20, NUM_BOXES 12."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-i/yellow",
+        "dir": "sprites/yellow"
+      },
+      "boxart": "boxart/yellow.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Yellow"
+      },
+      "sources": {}
+    },
+    {
+      "id": "gold",
+      "name": "Pokémon Gold",
+      "shortName": "Gold",
+      "status": "live",
+      "generation": 2,
+      "region": "Johto",
+      "versionGroup": "gold-silver",
+      "pokeapiVersion": "gold",
+      "pairedWith": "silver",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "johto",
+          "name": "New Pokédex",
+          "pokeapiPokedex": "original-johto",
+          "size": 251,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_New_Pok%C3%A9dex_number",
+          "pokemondbDex": "gold-silver-crystal"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 14,
+        "source": "pret disassembly: pret/pokegold — MONS_PER_BOX 20, NUM_BOXES 14 (Japanese releases use 30/box across 9 boxes)."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ii/gold",
+        "dir": "sprites/gold"
+      },
+      "boxart": "boxart/gold.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Gold_and_Silver",
+        "nationalExclusives": "https://www.serebii.net/gs/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "gold-silver/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/gs/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/gs/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "silver",
+      "name": "Pokémon Silver",
+      "shortName": "Silver",
+      "status": "live",
+      "generation": 2,
+      "region": "Johto",
+      "versionGroup": "gold-silver",
+      "pokeapiVersion": "silver",
+      "pairedWith": "gold",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "johto",
+          "name": "New Pokédex",
+          "pokeapiPokedex": "original-johto",
+          "size": 251,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_New_Pok%C3%A9dex_number",
+          "pokemondbDex": "gold-silver-crystal"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 14,
+        "source": "pret disassembly: pret/pokegold — MONS_PER_BOX 20, NUM_BOXES 14."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ii/silver",
+        "dir": "sprites/silver"
+      },
+      "boxart": "boxart/silver.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Gold_and_Silver",
+        "nationalExclusives": "https://www.serebii.net/gs/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "gold-silver/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/gs/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/gs/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "crystal",
+      "name": "Pokémon Crystal",
+      "shortName": "Crystal",
+      "status": "live",
+      "generation": 2,
+      "region": "Johto",
+      "versionGroup": "crystal",
+      "pokeapiVersion": "crystal",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "johto",
+          "name": "New Pokédex",
+          "pokeapiPokedex": "original-johto",
+          "size": 251,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_New_Pok%C3%A9dex_number",
+          "pokemondbDex": "gold-silver-crystal"
+        }
+      ],
+      "boxes": {
+        "style": "list",
+        "cols": 1,
+        "rows": 20,
+        "perBox": 20,
+        "count": 14,
+        "source": "pret disassembly: pret/pokecrystal — MONS_PER_BOX 20, NUM_BOXES 14."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ii/crystal",
+        "dir": "sprites/crystal"
+      },
+      "boxart": "boxart/crystal.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Crystal"
+      },
+      "sources": {
+        "serebiiUnobtainable": "https://www.serebii.net/crystal/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "ruby",
+      "name": "Pokémon Ruby",
+      "shortName": "Ruby",
+      "status": "live",
+      "generation": 3,
+      "region": "Hoenn",
+      "versionGroup": "ruby-sapphire",
+      "pokeapiVersion": "ruby",
+      "pairedWith": "sapphire",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "hoenn",
+          "name": "Hoenn Pokédex",
+          "pokeapiPokedex": "hoenn",
+          "size": 202,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_in_Generation_III",
+          "pokemondbDex": "ruby-sapphire-emerald"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 14,
+        "source": "pret disassembly: pret/pokeemerald include/pokemon_storage_system.h — IN_BOX_ROWS 5, IN_BOX_COLUMNS 6, TOTAL_BOXES_COUNT 14."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iii/ruby-sapphire",
+        "dir": "sprites/rs"
+      },
+      "boxart": "boxart/ruby.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Ruby_and_Sapphire",
+        "nationalExclusives": "https://www.serebii.net/rubysapphire/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "ruby-sapphire/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/rubysapphire/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/rubysapphire/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "sapphire",
+      "name": "Pokémon Sapphire",
+      "shortName": "Sapphire",
+      "status": "live",
+      "generation": 3,
+      "region": "Hoenn",
+      "versionGroup": "ruby-sapphire",
+      "pokeapiVersion": "sapphire",
+      "pairedWith": "ruby",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "hoenn",
+          "name": "Hoenn Pokédex",
+          "pokeapiPokedex": "hoenn",
+          "size": 202,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_in_Generation_III",
+          "pokemondbDex": "ruby-sapphire-emerald"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 14,
+        "source": "pret disassembly: pret/pokeemerald — IN_BOX_ROWS 5, IN_BOX_COLUMNS 6."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iii/ruby-sapphire",
+        "dir": "sprites/rs"
+      },
+      "boxart": "boxart/sapphire.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Ruby_and_Sapphire",
+        "nationalExclusives": "https://www.serebii.net/rubysapphire/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "ruby-sapphire/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/rubysapphire/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/rubysapphire/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "emerald",
+      "name": "Pokémon Emerald",
+      "shortName": "Emerald",
+      "status": "live",
+      "generation": 3,
+      "region": "Hoenn",
+      "versionGroup": "emerald",
+      "pokeapiVersion": "emerald",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "hoenn",
+          "name": "Hoenn Pokédex",
+          "pokeapiPokedex": "hoenn",
+          "size": 202,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_in_Generation_III",
+          "pokemondbDex": "ruby-sapphire-emerald"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 14,
+        "source": "pret disassembly: pret/pokeemerald — IN_BOX_ROWS 5, IN_BOX_COLUMNS 6, TOTAL_BOXES_COUNT 14."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iii/emerald",
+        "dir": "sprites/emerald"
+      },
+      "boxart": "boxart/emerald.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Emerald"
+      },
+      "sources": {
+        "serebiiUnobtainable": "https://www.serebii.net/emerald/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "firered",
+      "name": "Pokémon FireRed",
+      "shortName": "FireRed",
+      "status": "live",
+      "generation": 3,
+      "region": "Kanto",
+      "versionGroup": "firered-leafgreen",
+      "pokeapiVersion": "firered",
+      "pairedWith": "leafgreen",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "kanto",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "firered-leafgreen"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 14,
+        "source": "pret disassembly: pret/pokefirered include/pokemon_storage_system.h — IN_BOX_ROWS 5, IN_BOX_COLUMNS 6."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iii/firered-leafgreen",
+        "dir": "sprites/frlg"
+      },
+      "boxart": "boxart/firered.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_FireRed_and_LeafGreen",
+        "nationalExclusives": "https://www.serebii.net/fireredleafgreen/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "firered-leafgreen/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/fireredleafgreen/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/fireredleafgreen/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "leafgreen",
+      "name": "Pokémon LeafGreen",
+      "shortName": "LeafGreen",
+      "status": "live",
+      "generation": 3,
+      "region": "Kanto",
+      "versionGroup": "firered-leafgreen",
+      "pokeapiVersion": "leafgreen",
+      "pairedWith": "firered",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "kanto",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "firered-leafgreen"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 14,
+        "source": "pret disassembly: pret/pokefirered — IN_BOX_ROWS 5, IN_BOX_COLUMNS 6."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iii/firered-leafgreen",
+        "dir": "sprites/frlg"
+      },
+      "boxart": "boxart/leafgreen.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_FireRed_and_LeafGreen",
+        "nationalExclusives": "https://www.serebii.net/fireredleafgreen/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "firered-leafgreen/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/fireredleafgreen/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/fireredleafgreen/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "diamond",
+      "name": "Pokémon Diamond",
+      "shortName": "Diamond",
+      "status": "live",
+      "generation": 4,
+      "region": "Sinnoh",
+      "versionGroup": "diamond-pearl",
+      "pokeapiVersion": "diamond",
+      "pairedWith": "pearl",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "sinnoh",
+          "name": "Sinnoh Pokédex",
+          "pokeapiPokedex": "original-sinnoh",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Sinnoh_Pok%C3%A9dex_number",
+          "pokemondbDex": "diamond-pearl"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 18,
+        "source": "pret disassembly: pret/pokediamond include/pokemon_storage_system.h — NUM_BOXES 18, MONS_PER_BOX 30; grid from pret/pokeplatinum include/pc_boxes.h — MAX_PC_ROWS 5, MAX_PC_COLS 6."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iv/diamond-pearl",
+        "dir": "sprites/dp"
+      },
+      "boxart": "boxart/diamond.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Diamond_and_Pearl",
+        "nationalExclusives": "https://www.serebii.net/diamondpearl/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "diamond-pearl/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/diamondpearl/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/diamondpearl/unobtainables.shtml"
+      }
+    },
+    {
+      "id": "pearl",
+      "name": "Pokémon Pearl",
+      "shortName": "Pearl",
+      "status": "live",
+      "generation": 4,
+      "region": "Sinnoh",
+      "versionGroup": "diamond-pearl",
+      "pokeapiVersion": "pearl",
+      "pairedWith": "diamond",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "sinnoh",
+          "name": "Sinnoh Pokédex",
+          "pokeapiPokedex": "original-sinnoh",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Sinnoh_Pok%C3%A9dex_number",
+          "pokemondbDex": "diamond-pearl"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 18,
+        "source": "pret disassembly: pret/pokediamond — NUM_BOXES 18, MONS_PER_BOX 30."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iv/diamond-pearl",
+        "dir": "sprites/dp"
+      },
+      "boxart": "boxart/pearl.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Diamond_and_Pearl",
+        "nationalExclusives": "https://www.serebii.net/diamondpearl/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "diamond-pearl/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/diamondpearl/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/diamondpearl/unobtainables.shtml"
+      }
+    },
+    {
+      "id": "platinum",
+      "name": "Pokémon Platinum",
+      "shortName": "Platinum",
+      "status": "live",
+      "generation": 4,
+      "region": "Sinnoh",
+      "versionGroup": "platinum",
+      "pokeapiVersion": "platinum",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "sinnoh",
+          "name": "Sinnoh Pokédex",
+          "pokeapiPokedex": "extended-sinnoh",
+          "size": 210,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Sinnoh_Pok%C3%A9dex_number",
+          "pokemondbDex": "platinum"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 18,
+        "source": "pret disassembly: pret/pokeplatinum include/pc_boxes.h — MAX_PC_BOXES 18, MAX_PC_ROWS 5, MAX_PC_COLS 6."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iv/platinum",
+        "dir": "sprites/platinum"
+      },
+      "boxart": "boxart/platinum.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Platinum",
+        "nationalExclusives": "https://www.serebii.net/platinum/exclusives.shtml"
+      },
+      "sources": {
+        "serebiiExclusives": "https://www.serebii.net/platinum/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/platinum/missing.shtml"
+      }
+    },
+    {
+      "id": "heartgold",
+      "name": "Pokémon HeartGold",
+      "shortName": "HeartGold",
+      "status": "live",
+      "generation": 4,
+      "region": "Johto",
+      "versionGroup": "heartgold-soulsilver",
+      "pokeapiVersion": "heartgold",
+      "pairedWith": "soulsilver",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "johto",
+          "name": "Johto Pokédex",
+          "pokeapiPokedex": "updated-johto",
+          "size": 256,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Johto_Pok%C3%A9dex_number",
+          "pokemondbDex": "heartgold-soulsilver"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 18,
+        "source": "pret disassembly: pret/pokeheartgold include/constants/pokemon.h — NUM_BOXES 18, MONS_PER_BOX 30; grid from pret/pokeplatinum include/pc_boxes.h."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iv/heartgold-soulsilver",
+        "dir": "sprites/hgss"
+      },
+      "boxart": "boxart/heartgold.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_HeartGold_and_SoulSilver",
+        "nationalExclusives": "https://www.serebii.net/heartgoldsoulsilver/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "heartgold-soulsilver/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/heartgoldsoulsilver/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/heartgoldsoulsilver/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "soulsilver",
+      "name": "Pokémon SoulSilver",
+      "shortName": "SoulSilver",
+      "status": "live",
+      "generation": 4,
+      "region": "Johto",
+      "versionGroup": "heartgold-soulsilver",
+      "pokeapiVersion": "soulsilver",
+      "pairedWith": "heartgold",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "johto",
+          "name": "Johto Pokédex",
+          "pokeapiPokedex": "updated-johto",
+          "size": 256,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Johto_Pok%C3%A9dex_number",
+          "pokemondbDex": "heartgold-soulsilver"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 18,
+        "source": "pret disassembly: pret/pokeheartgold — NUM_BOXES 18, MONS_PER_BOX 30."
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-iv/heartgold-soulsilver",
+        "dir": "sprites/hgss"
+      },
+      "boxart": "boxart/soulsilver.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_HeartGold_and_SoulSilver",
+        "nationalExclusives": "https://www.serebii.net/heartgoldsoulsilver/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "heartgold-soulsilver/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/heartgoldsoulsilver/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/heartgoldsoulsilver/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "black",
+      "name": "Pokémon Black",
+      "shortName": "Black",
+      "status": "live",
+      "generation": 5,
+      "region": "Unova",
+      "versionGroup": "black-white",
+      "pokeapiVersion": "black",
+      "pairedWith": "white",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "unova",
+          "name": "Unova Pokédex",
+          "pokeapiPokedex": "original-unova",
+          "size": 156,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Unova_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Black_and_White",
+          "pokemondbDex": "black-white"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 24,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Amanita_PC_BW.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24, unlocked progressively.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-v/black-white",
+        "dir": "sprites/bw"
+      },
+      "boxart": "boxart/black.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Black_and_White",
+        "nationalExclusives": "https://www.serebii.net/blackwhite/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "black-white/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/blackwhite/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/blackwhite/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "white",
+      "name": "Pokémon White",
+      "shortName": "White",
+      "status": "live",
+      "generation": 5,
+      "region": "Unova",
+      "versionGroup": "black-white",
+      "pokeapiVersion": "white",
+      "pairedWith": "black",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "unova",
+          "name": "Unova Pokédex",
+          "pokeapiPokedex": "original-unova",
+          "size": 156,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Unova_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Black_and_White",
+          "pokemondbDex": "black-white"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 24,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Amanita_PC_BW.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-v/black-white",
+        "dir": "sprites/bw"
+      },
+      "boxart": "boxart/white.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Black_and_White",
+        "nationalExclusives": "https://www.serebii.net/blackwhite/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "black-white/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/blackwhite/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/blackwhite/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "black-2",
+      "name": "Pokémon Black 2",
+      "shortName": "Black 2",
+      "status": "live",
+      "generation": 5,
+      "region": "Unova",
+      "versionGroup": "black-2-white-2",
+      "pokeapiVersion": "black-2",
+      "pairedWith": "white-2",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "unova",
+          "name": "Unova Pokédex",
+          "pokeapiPokedex": "updated-unova",
+          "size": 301,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Unova_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Black_2_and_White_2",
+          "pokemondbDex": "black-white-2"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 24,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Amanita_PC_B2W2.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-v/black-white",
+        "dir": "sprites/bw",
+        "note": "Black 2/White 2 reuse the Black/White sprite set; PokeAPI has no separate black-2-white-2 folder."
+      },
+      "boxart": "boxart/black-2.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Black_2_and_White_2",
+        "nationalExclusives": "https://www.serebii.net/black2white2/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "black-white-2/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/black2white2/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/black2white2/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "white-2",
+      "name": "Pokémon White 2",
+      "shortName": "White 2",
+      "status": "live",
+      "generation": 5,
+      "region": "Unova",
+      "versionGroup": "black-2-white-2",
+      "pokeapiVersion": "white-2",
+      "pairedWith": "black-2",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "unova",
+          "name": "Unova Pokédex",
+          "pokeapiPokedex": "updated-unova",
+          "size": 301,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Unova_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Black_2_and_White_2",
+          "pokemondbDex": "black-white-2"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 24,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Amanita_PC_B2W2.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-v/black-white",
+        "dir": "sprites/bw",
+        "note": "Black 2/White 2 reuse the Black/White sprite set."
+      },
+      "boxart": "boxart/white-2.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Black_2_and_White_2",
+        "nationalExclusives": "https://www.serebii.net/black2white2/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "black-white-2/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/black2white2/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/black2white2/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "x",
+      "name": "Pokémon X",
+      "shortName": "X",
+      "status": "live",
+      "generation": 6,
+      "region": "Kalos",
+      "versionGroup": "x-y",
+      "pokeapiVersion": "x",
+      "pairedWith": "y",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "central",
+          "name": "Central Kalos Pokédex",
+          "pokeapiPokedex": "kalos-central",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Central_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": "x-y"
+        },
+        {
+          "key": "coastal",
+          "name": "Coastal Kalos Pokédex",
+          "pokeapiPokedex": "kalos-coastal",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Coastal_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": null,
+          "pokemondbNote": "PokemonDB publishes a single combined Kalos dex (Central only), so this dex has no independent order cross-check."
+        },
+        {
+          "key": "mountain",
+          "name": "Mountain Kalos Pokédex",
+          "pokeapiPokedex": "kalos-mountain",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Mountain_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": null,
+          "pokemondbNote": "PokemonDB publishes a single combined Kalos dex (Central only), so this dex has no independent order cross-check."
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 31,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Cassius_PC_XY.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 7/15/23/30/31; the 31st unlocks after catching Xerneas or Yveltal.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vi/x-y",
+        "dir": "sprites/xy"
+      },
+      "boxart": "boxart/x.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_X_and_Y",
+        "nationalExclusives": "https://www.serebii.net/xy/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "x-y/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/xy/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/xy/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "y",
+      "name": "Pokémon Y",
+      "shortName": "Y",
+      "status": "live",
+      "generation": 6,
+      "region": "Kalos",
+      "versionGroup": "x-y",
+      "pokeapiVersion": "y",
+      "pairedWith": "x",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "central",
+          "name": "Central Kalos Pokédex",
+          "pokeapiPokedex": "kalos-central",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Central_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": "x-y"
+        },
+        {
+          "key": "coastal",
+          "name": "Coastal Kalos Pokédex",
+          "pokeapiPokedex": "kalos-coastal",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Coastal_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": null,
+          "pokemondbNote": "PokemonDB publishes a single combined Kalos dex (Central only), so this dex has no independent order cross-check."
+        },
+        {
+          "key": "mountain",
+          "name": "Mountain Kalos Pokédex",
+          "pokeapiPokedex": "kalos-mountain",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Mountain_Kalos_Pok%C3%A9dex_number",
+          "pokemondbDex": null,
+          "pokemondbNote": "PokemonDB publishes a single combined Kalos dex (Central only), so this dex has no independent order cross-check."
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 31,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:Cassius_PC_XY.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 7/15/23/30/31.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vi/x-y",
+        "dir": "sprites/xy"
+      },
+      "boxart": "boxart/y.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_X_and_Y",
+        "nationalExclusives": "https://www.serebii.net/xy/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "x-y/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/xy/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/xy/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "omega-ruby",
+      "name": "Pokémon Omega Ruby",
+      "shortName": "Omega Ruby",
+      "status": "live",
+      "generation": 6,
+      "region": "Hoenn",
+      "versionGroup": "omega-ruby-alpha-sapphire",
+      "pokeapiVersion": "omega-ruby",
+      "pairedWith": "alpha-sapphire",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "hoenn",
+          "name": "Hoenn Pokédex",
+          "pokeapiPokedex": "updated-hoenn",
+          "size": 211,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_in_Generation_VI",
+          "pokemondbDex": "omega-ruby-alpha-sapphire"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 31,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a photograph of a real save on hardware (Bulbapedia's official ORAS PC screenshot shows only 5 Pokemon in one row, too few to count): https://preview.redd.it/ee4t00jkaewg1.jpg. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available.",
+        "gridEvidence": "photograph"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vi/omegaruby-alphasapphire",
+        "dir": "sprites/oras"
+      },
+      "boxart": "boxart/omega-ruby.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Omega_Ruby_and_Alpha_Sapphire",
+        "nationalExclusives": "https://www.serebii.net/omegarubyalphasapphire/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "omega-ruby-alpha-sapphire/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/omegarubyalphasapphire/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/omegarubyalphasapphire/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "alpha-sapphire",
+      "name": "Pokémon Alpha Sapphire",
+      "shortName": "Alpha Sapphire",
+      "status": "live",
+      "generation": 6,
+      "region": "Hoenn",
+      "versionGroup": "omega-ruby-alpha-sapphire",
+      "pokeapiVersion": "alpha-sapphire",
+      "pairedWith": "omega-ruby",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "hoenn",
+          "name": "Hoenn Pokédex",
+          "pokeapiPokedex": "updated-hoenn",
+          "size": 211,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hoenn_Pok%C3%A9dex_number_in_Generation_VI",
+          "pokemondbDex": "omega-ruby-alpha-sapphire"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 31,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a photograph of a real save on hardware (Bulbapedia's official ORAS PC screenshot shows only 5 Pokemon in one row, too few to count): https://preview.redd.it/ee4t00jkaewg1.jpg. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available.",
+        "gridEvidence": "photograph"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vi/omegaruby-alphasapphire",
+        "dir": "sprites/oras"
+      },
+      "boxart": "boxart/alpha-sapphire.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Omega_Ruby_and_Alpha_Sapphire",
+        "nationalExclusives": "https://www.serebii.net/omegarubyalphasapphire/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "omega-ruby-alpha-sapphire/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/omegarubyalphasapphire/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/omegarubyalphasapphire/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "sun",
+      "name": "Pokémon Sun",
+      "shortName": "Sun",
+      "status": "live",
+      "generation": 7,
+      "region": "Alola",
+      "versionGroup": "sun-moon",
+      "pokeapiVersion": "sun",
+      "pairedWith": "moon",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "alola",
+          "name": "Alola Pokédex",
+          "pokeapiPokedex": "original-alola",
+          "size": 302,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Alola_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Sun_and_Moon",
+          "pokemondbDex": "sun-moon"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:PC_SM.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "sun-moon",
+        "dir": "sprites/sm",
+        "note": "PokeAPI has no Sun/Moon sprite set; these are PokemonDB's.",
+        "fallback": {
+          "source": "pokeapi-other",
+          "set": "home"
+        }
+      },
+      "boxart": "boxart/sun.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Sun_and_Moon",
+        "nationalExclusives": "https://www.serebii.net/sunmoon/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "sun-moon/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/sunmoon/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/sunmoon/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "moon",
+      "name": "Pokémon Moon",
+      "shortName": "Moon",
+      "status": "live",
+      "generation": 7,
+      "region": "Alola",
+      "versionGroup": "sun-moon",
+      "pokeapiVersion": "moon",
+      "pairedWith": "sun",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "alola",
+          "name": "Alola Pokédex",
+          "pokeapiPokedex": "original-alola",
+          "size": 302,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Alola_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Sun_and_Moon",
+          "pokemondbDex": "sun-moon"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:PC_SM.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "sun-moon",
+        "dir": "sprites/sm",
+        "note": "PokeAPI has no Sun/Moon sprite set; these are PokemonDB's.",
+        "fallback": {
+          "source": "pokeapi-other",
+          "set": "home"
+        }
+      },
+      "boxart": "boxart/moon.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Sun_and_Moon",
+        "nationalExclusives": "https://www.serebii.net/sunmoon/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "sun-moon/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/sunmoon/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/sunmoon/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "ultra-sun",
+      "name": "Pokémon Ultra Sun",
+      "shortName": "Ultra Sun",
+      "status": "live",
+      "generation": 7,
+      "region": "Alola",
+      "versionGroup": "ultra-sun-ultra-moon",
+      "pokeapiVersion": "ultra-sun",
+      "pairedWith": "ultra-moon",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "alola",
+          "name": "Alola Pokédex",
+          "pokeapiPokedex": "updated-alola",
+          "size": 403,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Alola_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Ultra_Sun_and_Ultra_Moon",
+          "pokemondbDex": "ultra-sun-ultra-moon"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:PC_USUM.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vii/ultra-sun-ultra-moon",
+        "dir": "sprites/usum"
+      },
+      "boxart": "boxart/ultra-sun.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Ultra_Sun_and_Ultra_Moon",
+        "nationalExclusives": "https://www.serebii.net/ultrasunultramoon/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "ultra-sun-ultra-moon/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/ultrasunultramoon/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/ultrasunultramoon/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "ultra-moon",
+      "name": "Pokémon Ultra Moon",
+      "shortName": "Ultra Moon",
+      "status": "live",
+      "generation": 7,
+      "region": "Alola",
+      "versionGroup": "ultra-sun-ultra-moon",
+      "pokeapiVersion": "ultra-moon",
+      "pairedWith": "ultra-sun",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "alola",
+          "name": "Alola Pokédex",
+          "pokeapiPokedex": "updated-alola",
+          "size": 403,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Alola_Pok%C3%A9dex_number_in_Pok%C3%A9mon_Ultra_Sun_and_Ultra_Moon",
+          "pokemondbDex": "ultra-sun-ultra-moon"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by counting the grid in a official screenshot: https://archives.bulbagarden.net/wiki/File:PC_USUM.png. Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. No public decompilation exists for this generation's box UI, so no source constant is available. Box count 8/16/24/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-vii/ultra-sun-ultra-moon",
+        "dir": "sprites/usum"
+      },
+      "boxart": "boxart/ultra-moon.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Ultra_Sun_and_Ultra_Moon",
+        "nationalExclusives": "https://www.serebii.net/ultrasunultramoon/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "ultra-sun-ultra-moon/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/ultrasunultramoon/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/ultrasunultramoon/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "lets-go-pikachu",
+      "name": "Pokémon: Let's Go, Pikachu!",
+      "shortName": "Let's Go Pikachu",
+      "status": "live",
+      "generation": 7,
+      "region": "Kanto",
+      "versionGroup": "lets-go-pikachu-lets-go-eevee",
+      "pokeapiVersion": "lets-go-pikachu",
+      "pairedWith": "lets-go-eevee",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "letsgo-kanto",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "lets-go-pikachu-eevee"
+        }
+      ],
+      "boxes": {
+        "style": "single",
+        "cols": 6,
+        "rows": 0,
+        "perBox": 1000,
+        "count": 1,
+        "source": "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Box — \"a single continuous list of Pokémon... It can hold up to 1,000 Pokémon.\" Not a box grid at all."
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "lets-go-pikachu-eevee",
+        "dir": "sprites/lgpe",
+        "note": "PokeAPI has no Let's Go sprite set; these are PokemonDB's."
+      },
+      "boxart": "boxart/lets-go-pikachu.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon:_Let's_Go,_Pikachu!_and_Let's_Go,_Eevee!",
+        "nationalExclusives": "https://www.serebii.net/letsgopikachueevee/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "lets-go-pikachu-eevee/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/letsgopikachueevee/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/letsgopikachueevee/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "lets-go-eevee",
+      "name": "Pokémon: Let's Go, Eevee!",
+      "shortName": "Let's Go Eevee",
+      "status": "live",
+      "generation": 7,
+      "region": "Kanto",
+      "versionGroup": "lets-go-pikachu-lets-go-eevee",
+      "pokeapiVersion": "lets-go-eevee",
+      "pairedWith": "lets-go-pikachu",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "kanto",
+          "name": "Kanto Pokédex",
+          "pokeapiPokedex": "letsgo-kanto",
+          "size": 153,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kanto_Pok%C3%A9dex_number",
+          "pokemondbDex": "lets-go-pikachu-eevee"
+        }
+      ],
+      "boxes": {
+        "style": "single",
+        "cols": 6,
+        "rows": 0,
+        "perBox": 1000,
+        "count": 1,
+        "source": "https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Box — single 1,000-slot continuous list."
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "lets-go-pikachu-eevee",
+        "dir": "sprites/lgpe",
+        "note": "PokeAPI has no Let's Go sprite set; these are PokemonDB's."
+      },
+      "boxart": "boxart/lets-go-eevee.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon:_Let's_Go,_Pikachu!_and_Let's_Go,_Eevee!",
+        "nationalExclusives": "https://www.serebii.net/letsgopikachueevee/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "lets-go-pikachu-eevee/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/letsgopikachueevee/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/letsgopikachueevee/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "sword",
+      "name": "Pokémon Sword",
+      "shortName": "Sword",
+      "status": "live",
+      "generation": 8,
+      "region": "Galar",
+      "versionGroup": "sword-shield",
+      "pokeapiVersion": "sword",
+      "pairedWith": "shield",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "galar",
+          "name": "Galar Pokédex",
+          "pokeapiPokedex": "galar",
+          "size": 400,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Galar_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield"
+        },
+        {
+          "key": "isle-of-armor",
+          "name": "Isle of Armor Pokédex",
+          "pokeapiPokedex": "isle-of-armor",
+          "size": 211,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Isle_of_Armor_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield/isle-of-armor"
+        },
+        {
+          "key": "crown-tundra",
+          "name": "Crown Tundra Pokédex",
+          "pokeapiPokedex": "crown-tundra",
+          "size": 210,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Crown_Tundra_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield/crown-tundra"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Boxes_SwSh.png (1280x720). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 8/16/24/31/32; the 32nd unlocks after catching Eternatus.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "sword-shield",
+        "dir": "sprites/swsh",
+        "note": "PokeAPI has no Sword/Shield sprite set; these are PokemonDB's."
+      },
+      "boxart": "boxart/sword.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Sword_and_Shield",
+        "nationalExclusives": "https://www.serebii.net/swordshield/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "sword-shield/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/swordshield/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/swordshield/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "shield",
+      "name": "Pokémon Shield",
+      "shortName": "Shield",
+      "status": "live",
+      "generation": 8,
+      "region": "Galar",
+      "versionGroup": "sword-shield",
+      "pokeapiVersion": "shield",
+      "pairedWith": "sword",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "galar",
+          "name": "Galar Pokédex",
+          "pokeapiPokedex": "galar",
+          "size": 400,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Galar_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield"
+        },
+        {
+          "key": "isle-of-armor",
+          "name": "Isle of Armor Pokédex",
+          "pokeapiPokedex": "isle-of-armor",
+          "size": 211,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Isle_of_Armor_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield/isle-of-armor"
+        },
+        {
+          "key": "crown-tundra",
+          "name": "Crown Tundra Pokédex",
+          "pokeapiPokedex": "crown-tundra",
+          "size": 210,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Crown_Tundra_Pok%C3%A9dex_number",
+          "pokemondbDex": "sword-shield/crown-tundra"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Boxes_SwSh.png (1280x720). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 8/16/24/31/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "sword-shield",
+        "dir": "sprites/swsh",
+        "note": "PokeAPI has no Sword/Shield sprite set; these are PokemonDB's."
+      },
+      "boxart": "boxart/shield.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Sword_and_Shield",
+        "nationalExclusives": "https://www.serebii.net/swordshield/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "sword-shield/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/swordshield/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/swordshield/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "brilliant-diamond",
+      "name": "Pokémon Brilliant Diamond",
+      "shortName": "Brilliant Diamond",
+      "status": "live",
+      "generation": 8,
+      "region": "Sinnoh",
+      "versionGroup": "brilliant-diamond-shining-pearl",
+      "pokeapiVersion": "brilliant-diamond",
+      "pairedWith": "shining-pearl",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "sinnoh",
+          "name": "Sinnoh Pokédex",
+          "pokeapiPokedex": "original-sinnoh",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Sinnoh_Pok%C3%A9dex_number",
+          "pokemondbDex": "brilliant-diamond-shining-pearl"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 40,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Bebe_PC_BDSP.png (1280x720). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 18/24/30/35/40.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-viii/brilliant-diamond-shining-pearl",
+        "dir": "sprites/bdsp"
+      },
+      "boxart": "boxart/brilliant-diamond.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Brilliant_Diamond_and_Shining_Pearl",
+        "nationalExclusives": "https://www.serebii.net/brilliantdiamondshiningpearl/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "brilliant-diamond-shining-pearl/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/brilliantdiamondshiningpearl/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/brilliantdiamondshiningpearl/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "shining-pearl",
+      "name": "Pokémon Shining Pearl",
+      "shortName": "Shining Pearl",
+      "status": "live",
+      "generation": 8,
+      "region": "Sinnoh",
+      "versionGroup": "brilliant-diamond-shining-pearl",
+      "pokeapiVersion": "shining-pearl",
+      "pairedWith": "brilliant-diamond",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "sinnoh",
+          "name": "Sinnoh Pokédex",
+          "pokeapiPokedex": "original-sinnoh",
+          "size": 151,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Sinnoh_Pok%C3%A9dex_number",
+          "pokemondbDex": "brilliant-diamond-shining-pearl"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 40,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Bebe_PC_BDSP.png (1280x720). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 18/24/30/35/40.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-viii/brilliant-diamond-shining-pearl",
+        "dir": "sprites/bdsp"
+      },
+      "boxart": "boxart/shining-pearl.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Brilliant_Diamond_and_Shining_Pearl",
+        "nationalExclusives": "https://www.serebii.net/brilliantdiamondshiningpearl/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "brilliant-diamond-shining-pearl/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/brilliantdiamondshiningpearl/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/brilliantdiamondshiningpearl/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "legends-arceus",
+      "name": "Pokémon Legends: Arceus",
+      "shortName": "Legends: Arceus",
+      "status": "live",
+      "generation": 8,
+      "region": "Hisui",
+      "versionGroup": "legends-arceus",
+      "pokeapiVersion": "legends-arceus",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "hisui",
+          "name": "Hisui Pokédex",
+          "pokeapiPokedex": "hisui",
+          "size": 242,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hisui_Pok%C3%A9dex_number",
+          "pokemondbDex": "legends-arceus"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "Pasture management menu confirmed as a fixed 6x5 grid of round Pokemon icons by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Pastures_interface_LA.png (1280x720). Capacity 30/pasture, up to 32 pastures, per https://bulbapedia.bulbagarden.net/wiki/Pasture.",
+        "boxNoun": "Pasture",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokemondb",
+        "set": "legends-arceus",
+        "dir": "sprites/pla",
+        "note": "PokeAPI has no Legends: Arceus sprite set; these are PokemonDB's.",
+        "fallback": {
+          "source": "pokeapi-other",
+          "set": "home"
+        }
+      },
+      "boxart": "boxart/legends-arceus.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Legends:_Arceus"
+      },
+      "sources": {
+        "serebiiUnobtainable": "https://www.serebii.net/legendsarceus/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "scarlet",
+      "name": "Pokémon Scarlet",
+      "shortName": "Scarlet",
+      "status": "live",
+      "generation": 9,
+      "region": "Paldea",
+      "versionGroup": "scarlet-violet",
+      "pokeapiVersion": "scarlet",
+      "pairedWith": "violet",
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "paldea",
+          "name": "Paldea Pokédex",
+          "pokeapiPokedex": "paldea",
+          "size": 400,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Paldea_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet"
+        },
+        {
+          "key": "kitakami",
+          "name": "Kitakami Pokédex",
+          "pokeapiPokedex": "kitakami",
+          "size": 200,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kitakami_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet/teal-mask"
+        },
+        {
+          "key": "blueberry",
+          "name": "Blueberry Pokédex",
+          "pokeapiPokedex": "blueberry",
+          "size": 243,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Blueberry_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet/indigo-disk"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Boxes_SV.png (1920x1080). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 8/16/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ix/scarlet-violet",
+        "dir": "sprites/sv"
+      },
+      "boxart": "boxart/scarlet.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Scarlet_and_Violet",
+        "nationalExclusives": "https://www.serebii.net/scarletviolet/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "scarlet-violet/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/scarletviolet/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/scarletviolet/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "violet",
+      "name": "Pokémon Violet",
+      "shortName": "Violet",
+      "status": "live",
+      "generation": 9,
+      "region": "Paldea",
+      "versionGroup": "scarlet-violet",
+      "pokeapiVersion": "violet",
+      "pairedWith": "scarlet",
+      "accent": "ss",
+      "dexes": [
+        {
+          "key": "paldea",
+          "name": "Paldea Pokédex",
+          "pokeapiPokedex": "paldea",
+          "size": 400,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Paldea_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet"
+        },
+        {
+          "key": "kitakami",
+          "name": "Kitakami Pokédex",
+          "pokeapiPokedex": "kitakami",
+          "size": 200,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Kitakami_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet/teal-mask"
+        },
+        {
+          "key": "blueberry",
+          "name": "Blueberry Pokédex",
+          "pokeapiPokedex": "blueberry",
+          "size": 243,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Blueberry_Pok%C3%A9dex_number",
+          "pokemondbDex": "scarlet-violet/indigo-disk"
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Boxes_SV.png (1920x1080). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 8/16/32.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ix/scarlet-violet",
+        "dir": "sprites/sv"
+      },
+      "boxart": "boxart/violet.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Scarlet_and_Violet",
+        "nationalExclusives": "https://www.serebii.net/scarletviolet/exclusives.shtml"
+      },
+      "sources": {
+        "pokemondbExclusivesPath": "scarlet-violet/exclusive",
+        "serebiiExclusives": "https://www.serebii.net/scarletviolet/exclusives.shtml",
+        "serebiiUnobtainable": "https://www.serebii.net/scarletviolet/unobtainable.shtml"
+      }
+    },
+    {
+      "id": "legends-za",
+      "name": "Pokémon Legends: Z-A",
+      "shortName": "Legends: Z-A",
+      "status": "live",
+      "generation": 9,
+      "region": "Kalos",
+      "versionGroup": "legends-za",
+      "pokeapiVersion": "legends-za",
+      "pairedWith": null,
+      "accent": "hg",
+      "dexes": [
+        {
+          "key": "lumiose",
+          "name": "Lumiose Pokédex",
+          "pokeapiPokedex": "lumiose-city",
+          "size": 232,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Lumiose_Pok%C3%A9dex_number",
+          "pokemondbDex": "legends-z-a"
+        },
+        {
+          "key": "hyperspace",
+          "name": "Hyperspace Pokédex",
+          "pokeapiPokedex": "hyperspace",
+          "size": 132,
+          "sizeSource": "https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_Hyperspace_Pok%C3%A9dex_number",
+          "pokemondbDex": null,
+          "pokemondbNote": "PokemonDB's legends-z-a page is the Lumiose dex only; it publishes no page for the Mega Dimension (Hyperspace) dex, so this dex has no independent order cross-check."
+        }
+      ],
+      "boxes": {
+        "style": "grid",
+        "cols": 6,
+        "rows": 5,
+        "perBox": 30,
+        "count": 32,
+        "source": "6 columns x 5 rows confirmed by direct observation of the official screenshot https://archives.bulbagarden.net/wiki/Special:FilePath/Boxes_ZA.png (1920x1080). Capacity 30/box per https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Storage_System. Box count 8/16/24/31/32; the 31st unlocks after obtaining the Rogue Mega Absol.",
+        "gridEvidence": "screenshot"
+      },
+      "sprites": {
+        "source": "pokeapi",
+        "set": "generation-ix/scarlet-violet",
+        "dir": "sprites/sv",
+        "note": "No per-game sprite set exists for Legends: Z-A on PokeAPI or PokemonDB. Scarlet/Violet sprites are used as the nearest-era stand-in, with PokeAPI's HOME renders filling the 109 species the SV set does not cover. These are NOT Z-A's own artwork.",
+        "fallback": {
+          "source": "pokeapi-other",
+          "set": "home"
+        }
+      },
+      "boxart": "boxart/legends-za.jpg",
+      "links": {
+        "walkthrough": "https://bulbapedia.bulbagarden.net/wiki/Walkthrough:Pok%C3%A9mon_Legends:_Z-A"
+      },
+      "sources": {
+        "serebiiUnobtainable": "https://www.serebii.net/legendsz-a/unobtainable.shtml",
+        "boxart": "Serebii's box-art gallery — the standard Switch edition packshot, 618x1000. PokemonDB has no Legends Z-A cover.",
+        "boxartUrl": "https://www.serebii.net/legendsz-a/box/switch1.jpg"
+      },
+      "pokemondbVersion": "legends-z-a"
+    }
+  ],
+  "$assets": {
+    "homeIcon": {
+      "path": "boxart/home.jpg",
+      "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/34/55/27/3455273b-5736-2e6c-1a88-c05860e9e4b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg",
+      "source": "Apple App Store artwork CDN, located via the public iTunes Search API. 512x512 JPEG. Bulbagarden Archives (403 to curl) and Wikipedia (no images) had no reachable copy."
+    }
+  }
+}
