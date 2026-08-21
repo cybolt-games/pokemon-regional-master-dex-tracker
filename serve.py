@@ -43,6 +43,18 @@ MAX_BODY = 4 * 1024 * 1024
 COMPRESSIBLE = (".json", ".js", ".css", ".html", ".svg", ".csv", ".txt", ".map")
 COMPRESS_MIN_BYTES = 1024
 
+# A box page asks for one image per Pokémon — 151 for Kanto, 664 for Paldea. On
+# localhost that is invisible, but over a network every one costs a round trip,
+# and a single-threaded server serialises the browser's parallel connections
+# into one queue. That is why the page felt fine on a desktop and took half a
+# minute on a phone.
+#
+# Sprites and cover art never change for a given path, so they are cached hard.
+# The datasets and pages are revalidated instead, which costs one cheap 304 and
+# keeps a rebuild from serving stale data.
+CACHE_IMMUTABLE = "public, max-age=2592000"       # 30 days — assets
+CACHE_REVALIDATE = "no-cache"                      # data and pages
+
 
 def read_collection():
     if not os.path.exists(COLLECTION):
@@ -113,6 +125,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             self.send_header("Content-Encoding", "gzip")
             self.send_header("Content-Length", str(len(body)))
             self.send_header("Vary", "Accept-Encoding")
+            self.send_header("Last-Modified",
+                             self.date_time_string(int(os.stat(target).st_mtime)))
             self.end_headers()
             if self.command != "HEAD":
                 self.wfile.write(body)
@@ -141,23 +155,34 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         write_collection(rows)
         return self._json(200, {"ok": True, "count": len(rows)})
 
+    def _cache_header_for(self, path):
+        return CACHE_IMMUTABLE if path.startswith("/assets/") else CACHE_REVALIDATE
+
     def end_headers(self):
-        # During development a stale cache is far more annoying than a request.
         if not self.path.startswith("/api/"):
-            self.send_header("Cache-Control", "no-store")
+            self.send_header("Cache-Control",
+                             self._cache_header_for(self.path.split("?")[0]))
         super().end_headers()
 
     def log_message(self, fmt, *args):
         sys.stderr.write("  %s\n" % (fmt % args))
 
 
+class Server(socketserver.ThreadingMixIn, http.server.HTTPServer):
+    """Threaded, so the browser's parallel connections are actually parallel."""
+
+    daemon_threads = True
+    allow_reuse_address = True
+    request_queue_size = 128
+
+
 def main():
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     handler = functools.partial(Handler, directory=ROOT)
-    socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", port), handler) as httpd:
+    with Server(("", port), handler) as httpd:
         existing = len(read_collection())
         print(f"Regional Dex Buddy → http://localhost:{port}")
+        print(f"On your phone      → http://<this machine's IP>:{port}")
         print(f"Serving {ROOT}")
         print(f"Collection {COLLECTION} ({existing} row(s))")
         print("Ctrl-C to stop.\n")
