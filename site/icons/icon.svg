@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Regional Dex Buddy">
+<rect width="512" height="512" rx="112.64" fill="#12141c"/>
+<rect x="59.1221" y="59.1221" width="393.756" height="393.756" rx="81.0197" fill="#1b1f2b" stroke="#2f3545" stroke-width="11.3428"/>
+<circle cx="113.92" cy="113.92" r="35.9936" fill="#e0a437"/>
+<circle cx="208.64" cy="113.92" r="35.9936" fill="#e0a437"/>
+<circle cx="303.36" cy="113.92" r="35.9936" fill="#e0a437"/>
+<circle cx="398.08" cy="113.92" r="35.9936" fill="#e0a437"/>
+<circle cx="113.92" cy="208.64" r="35.9936" fill="#e0a437"/>
+<circle cx="208.64" cy="208.64" r="35.9936" fill="#e0a437"/>
+<circle cx="303.36" cy="208.64" r="35.9936" fill="#e0a437"/>
+<circle cx="398.08" cy="208.64" r="35.9936" fill="#e0a437"/>
+<circle cx="113.92" cy="303.36" r="35.9936" fill="#e0a437"/>
+<circle cx="208.64" cy="303.36" r="35.9936" fill="#e0a437"/>
+<circle cx="303.36" cy="303.36" r="35.9936" fill="#e0a437"/>
+<circle cx="398.08" cy="303.36" r="30.9545" fill="none" stroke="#39415a" stroke-width="10.0782"/>
+<circle cx="113.92" cy="398.08" r="30.9545" fill="none" stroke="#39415a" stroke-width="10.0782"/>
+<circle cx="208.64" cy="398.08" r="30.9545" fill="none" stroke="#39415a" stroke-width="10.0782"/>
+<circle cx="303.36" cy="398.08" r="30.9545" fill="none" stroke="#39415a" stroke-width="10.0782"/>
+<circle cx="398.08" cy="398.08" r="30.9545" fill="none" stroke="#39415a" stroke-width="10.0782"/>
+</svg>
